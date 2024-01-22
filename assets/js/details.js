@@ -3,32 +3,59 @@ const detailsList = document.getElementById("detailsList");
 const maxRecords = 151;
 const limit = 8;
 let offset = 0;
+let currentPokemonId = null;
 
 function convertDetailsToLi(pokemon) {
     return `
-    <div class="initial">
+    <div class="pokemon ${pokemon.type}">
     <img src="${pokemon.photo}"
-         alt="${pokemon.name}">
-    <h1 class="name">${pokemon.name}</h1>
-                    <ol class="types">
-                        ${pokemon.types
-                            .map(
-                                (type) =>
-                                    `<li class="type ${type}">${type}</li>`
-                            )
-                            .join("")}
-                    </ol>
-    
-                </div>
-                <div class="stats">
+         alt="${pokemon.name}" class="pokemonImg">
+         
+         </div>
+         <div class="itens">
+         <h1 class="name">${pokemon.name}</h1>
+                         <ol class="types">
+                             ${pokemon.types
+                                 .map(
+                                     (type) =>
+                                         `<li class="type ${type}">${type}</li>`
+                                 )
+                                 .join("")}
+                         </ol>
                     <h2>Stats</h2>
-                    <li>HP ${pokemon.hp}</li>
-                    <li>Attack ${pokemon.attack}</li>
-                    <li>Defense ${pokemon.defense}</li>
-                    <li>Special-Attack ${pokemon.specialAttack}</li>
-                    <li>Special-Defense ${pokemon.specialDefense}</li>
-                    <li>Speed ${pokemon.speed}</li>
-                </div>
+                    <section class="statsGeneral">
+                    <ol class="stats"> 
+                    <li>HP: ${pokemon.hp}</li>
+                    <li>Attack: ${pokemon.attack}</li>
+                    <li>Defense:  ${pokemon.defense}</li>
+                    <li>Special-Attack: ${pokemon.specialAttack}</li>
+                    <li>Special-Defense: ${pokemon.specialDefense}</li>
+                    <li>Speed: ${pokemon.speed}</li>
+                    </ol>
+                    <ol class="bar">
+                    <li><div class="barra"><div  class="${
+                        pokemon.type
+                    }" style="width: ${pokemon.hp}%"</div></div></li>
+                    <li><div class="barra"><div  class="${
+                        pokemon.type
+                    }" style="width: ${pokemon.attack}% " </div></div></li>
+                    <li><div class="barra"><div  class="${
+                        pokemon.type
+                    }" style="width: ${pokemon.defense}%" </div></div></li>
+                    <li><div class="barra"><div  class="${
+                        pokemon.type
+                    }" style="width: ${pokemon.specialAttack}%"</div></div></li>
+                    <li><div class="barra"><div  class="${
+                        pokemon.type
+                    }" style="width: ${
+        pokemon.specialDefense
+    }%"</div></div></li>
+                    <li><div class="barra"><div class="${
+                        pokemon.type
+                    }" style="width: ${pokemon.speed}%"</div></div</li>
+                    </ol>
+                    </section>             
+            
             </div>
 `;
 }
@@ -49,6 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return (window.location.href = "./index.html");
     }
 
-    let currentPokemonId = id;
+    let currentPokemonId = id - 1;
     loadPokemonDetails(currentPokemonId, 1);
 });

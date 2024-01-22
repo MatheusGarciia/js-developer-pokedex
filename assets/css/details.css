@@ -1,3 +1,172 @@
-.pokemonName {
-    color: red;
+.details {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+}
+
+.details .pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.details .pokemon img {
+    padding-top: 2rem;
+    margin: auto;
+    max-width: 100%;
+}
+
+.details .itens h1 {
+    color: black;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0.35rem 0 0;
+}
+
+.details .itens .types {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    margin: 0.75rem auto;
+    padding: 0;
+    justify-content: center;
+}
+
+.details .itens .types .type {
+    padding: 0.65rem 0.9rem;
+    margin: 0.5rem 0.35rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+}
+
+.details .itens h2 {
+    text-align: center;
+    color: black;
+    font-size: 1.75rem;
+    margin: 0.75rem 0;
+}
+
+.details .itens .statsGeneral {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.details .itens .statsGeneral .stats {
+    list-style: none;
+    color: black;
+    padding: 0;
+    margin: auto;
+}
+
+.details .itens .statsGeneral .stats li {
+    padding: 0.1rem;
+    margin: auto;
+}
+
+.details .itens .statsGeneral .bar {
+    padding: 0;
+    margin: auto;
+    list-style: none;
+}
+
+.details .itens .statsGeneral .bar li {
+    padding: 0.2rem;
+    margin: auto;
+}
+
+.details .itens .statsGeneral .bar .barra {
+    width: 12rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background-color: #ccc;
+    filter: brightness(1.1);
+}
+
+.details .itens .bar .barra div {
+    height: 100%;
+    border-radius: 1rem;
+    max-width: 100%;
+}
+
+.normal {
+    background-color: #a6a877;
+}
+
+.grass {
+    background-color: #77c850;
+}
+
+.fire {
+    background-color: #ee7f30;
+}
+
+.water {
+    background-color: #678fee;
+}
+
+.electric {
+    background-color: #f7cf2e;
+}
+
+.ice {
+    background-color: #98d5d7;
+}
+
+.ground {
+    background-color: #dfbf69;
+}
+
+.flying {
+    background-color: #a98ff0;
+}
+
+.poison {
+    background-color: #a040a0;
+}
+
+.fighting {
+    background-color: #bf3029;
+}
+
+.psychic {
+    background-color: #f65687;
+}
+
+.dark {
+    background-color: #725847;
+}
+
+.rock {
+    background-color: #b8a137;
+}
+
+.bug {
+    background-color: #a8b720;
+}
+
+.ghost {
+    background-color: #6e5896;
+}
+
+.steel {
+    background-color: #b9b7cf;
+}
+
+.dragon {
+    background-color: #6f38f6;
+}
+
+.fairy {
+    background-color: #f9aec7;
 }
